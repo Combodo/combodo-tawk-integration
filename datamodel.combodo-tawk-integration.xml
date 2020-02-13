@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.6">
+	<module_parameters>
+		<parameters id="combodo-tawk-integration" _delta="define">
+			<site_id>PUT_YOUR_SITE_ID_HERE</site_id>
+			<enabled_portals type="array"></enabled_portals>
+			<allowed_profiles type="array"></allowed_profiles>
+		</parameters>
+	</module_parameters>
+</itop_design>
