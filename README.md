@@ -10,13 +10,13 @@ It brings a small bubble in the bottom-right corner of the screen. Users can cli
 
 _Note: Chat can be enabled in any end-user portals or the backoffice through its configuration._
 
-![](docs/portal-widget-closed.png)
+![](doc/portal-widget-closed.png)
 
-![](docs/portal-widget-talking.png)
+![](doc/portal-widget-talking.png)
 
 Combined with the _iFrame dashlet_, the agent dashboard can be embedded in the admin. console to answer chats directly from iTop.
 
-![](docs/console-chats-dashboard.png)
+![](doc/console-chats-dashboard.png)
 
 ## Compatibility
 Compatible with iTop 2.7+
