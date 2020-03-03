@@ -106,11 +106,26 @@ class ConfigHelper
 		// Retrieve widget parameters
 		$sSiteId = static::GetModuleSetting('site_id');
 
+		// Retrieve current user information
+		$sUserNameAsJson = 'Unidentified visitor';
+		$sUserEmailAsJson = '';
+		$oUser = UserRights::GetContactObject();
+		if($oUser !== null)
+		{
+			$sUserNameAsJson = json_encode($oUser->GetName());
+			$sUserEmailAsJson = json_encode($oUser->Get('email'));
+		}
+
 		// Nothing
 		$sJS =
 			<<<JS
 /* Start of Tawk.to Script */
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+var Tawk_API=Tawk_API||{};
+Tawk_API.visitor = {
+	name : {$sUserNameAsJson},
+	email : {$sUserEmailAsJson}
+};
+var Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
