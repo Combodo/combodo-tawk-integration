@@ -3,8 +3,12 @@
 	<module_parameters>
 		<parameters id="combodo-tawk-integration" _delta="define">
 			<site_id>PUT_YOUR_SITE_ID_HERE</site_id>
-			<enabled_portals type="array"></enabled_portals>
-			<allowed_profiles type="array"></allowed_profiles>
+			<enabled_portals type="array">
+				<enabled_portal id="itop-portal">itop-portal</enabled_portal>
+			</enabled_portals>
+			<allowed_profiles type="array">
+				<allowed_profile id="portal-user">Portal user</allowed_profile>
+			</allowed_profiles>
 		</parameters>
 	</module_parameters>
 </itop_design>
