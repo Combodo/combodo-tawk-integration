@@ -26,18 +26,43 @@ Compatible with iTop 2.7+
 Go to [tawk.to](https://www.tawk.to/), create a free account and that's it!
 
 ### Set widget configuration
-First, go to the tawk.to backoffice and retrieve the `Site ID`. Once you got it, open the iTop configuration file and fill the module settings as follow:
+First, go to the tawk.to backoffice and retrieve the `Site ID`. Once you got it, fill the module settings as follow:
 - `site_id` Put the site ID retrieve in the previous step.
-- `enabled_portals` An array of the "portals" you want the chat to be enabled on. Can be `backoffice` for the admin. console or any end-user portal ID (eg. `itop-portal` for the standard portal).
-- `allowed_profiles` An array of iTop profiles to define which users will be able to use the chat. If not defined, all users will be able t use it.
+- `enabled_portals` An array of the "portals" you want the chat to be enabled on. Can be `backoffice` for the admin. console or any end-user portal ID (eg. `itop-portal` for the standard portal), by default only the `itop-portal` is enabled.
+- `allowed_profiles` An array of iTop profiles to define which users will be able to use the chat. If not defined, all users will be able t use it, by default only `Portal user` is allowed.
 
-### Configuration example
+The extension comes with default settings in its XML datamodel (_module parameters_), you can either:
+- Overload them with your XML delta (Good to propagate settings to all your iTop instances)
+- Overload them in iTop's configuration file (Good to change setting only on a specific instance)
+
+##### Default configuration in the datamodel
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.6">
+	<module_parameters>
+		<parameters id="combodo-tawk-integration" _delta="define">
+			<site_id>PUT_YOUR_SITE_ID_HERE</site_id>
+			<enabled_portals type="array">
+				<enabled_portal id="itop-portal">itop-portal</enabled_portal>
+			</enabled_portals>
+			<allowed_profiles type="array">
+				<allowed_profile id="portal-user">Portal user</allowed_profile>
+			</allowed_profiles>
+		</parameters>
+	</module_parameters>
+</itop_design>
+```
+
+##### Overloading through the configuration file
+Simply put the following in the configuration file and fill it with your own settings:
 ```
 'combodo-tawk-integration' => array (
     'site_id' => 'somesiteidforyourcopany',
     'enabled_portals' => array (
       'itop-portal',
     ),
-    'allowed_profiles' => array('Portal user'),
+    'allowed_profiles' => array(
+      'Portal user',
+    ),
 ),
 ```
