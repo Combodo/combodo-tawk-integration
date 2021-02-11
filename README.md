@@ -12,10 +12,6 @@ It brings a small bubble in the bottom-right corner of the screen. Users can cli
 
 ![](doc/portal-widget-talking.png)
 
-Combined with the _iFrame dashlet_, the agent dashboard can be embedded in the admin. console to answer chats directly from iTop.
-
-![](doc/console-chats-dashboard.png)
-
 Note that the chat widget can also be enabled in the backoffice.
 
 ![](doc/console-widget-opened.png)
