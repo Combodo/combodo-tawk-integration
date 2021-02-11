@@ -16,6 +16,8 @@ Note that the chat widget can also be enabled in the backoffice.
 
 ![](doc/console-widget-opened.png)
 
+**Important:** Unfortunately, embedding the agents dashboard in iTop through an iFrame dashlet is no longer possible as they have shutdown this feature.
+
 ## Compatibility
 Compatible with iTop 2.7+
 
