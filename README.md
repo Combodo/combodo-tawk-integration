@@ -28,8 +28,8 @@ Compatible with iTop 2.7+
 Go to [tawk.to](https://www.tawk.to/), create a free account and that's it!
 
 ### Set widget configuration
-First, go to the tawk.to backoffice and retrieve the `Site ID`. Once you got it, fill the module settings as follow:
-- `site_id` Put the site ID retrieve in the previous step.
+First, go to the tawk.to backoffice, open the administration panel and retrieve the `Property ID`. Once you got it, fill the module settings as follow:
+- `site_id` Put the Property ID retrieve in the previous step (Note: "Property ID" was once named "Site ID" on tawk.to, we did not change it to keep the backward compatiblity)
 - `enabled_portals` An array of the "portals" you want the chat to be enabled on. Can be `backoffice` for the administration console or any end-user portal ID (eg. `itop-portal` for the standard portal), by default only the `itop-portal` is enabled.
 - `allowed_profiles` An array of iTop profiles to define which users will be able to use the chat. If not defined, all users will be able t use it, by default only `Portal user` is allowed.
 
