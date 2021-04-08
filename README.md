@@ -83,7 +83,7 @@ Simply put the following in the configuration file and fill it with your own set
 ```
 
 ##### Using the secure mode
-Tawk.to provides a secure mode to ensure that a user identify isn't impersonated. If you want to use it, go to their backoffice in the éAdministration" page, "Overview" tab and activate the "Secure mode".
+Tawk.to provides an optional secure mode to ensure that a user identify isn't impersonated. If you want to use it, go to their backoffice in the éAdministration" page, "Overview" tab and activate the "Secure mode".
 Then copy the `Javascript API Key` ("MyAp1K3y" in the screenshot below), then put it in the `api_key` of the extension settings (see previous section).
 
 ![](doc/configuration-secure-mode.png)
