@@ -104,33 +104,41 @@ class ConfigHelper
 	public static function GetWidgetJSSnippet()
 	{
 		// Retrieve widget parameters
-		$sSiteId = static::GetModuleSetting('site_id');
+		$sPropertyId = static::GetModuleSetting('property_id');
+		$sWidgetId = static::GetModuleSetting('widget_id');
+		$sAPIKey = static::GetModuleSetting('api_key');
+
+		// Prepare default user data
+		$aUserData = array(
+			'name' => 'Unidentified visitor',
+			'email' => '',
+		);
 
 		// Retrieve current user information
-		$sUserNameAsJson = 'Unidentified visitor';
-		$sUserEmailAsJson = '';
 		$oUser = UserRights::GetContactObject();
 		if($oUser !== null)
 		{
-			$sUserNameAsJson = json_encode($oUser->GetName());
-			$sUserEmailAsJson = json_encode($oUser->Get('email'));
+			$aUserData['name'] = $oUser->GetName();
+			$aUserData['email'] = $oUser->Get('email');
+
+			if(false === empty($sAPIKey)){
+				$aUserData['hash'] = hash_hmac("sha256", $aUserData['email'], $sAPIKey);
+			}
 		}
+		$sUserDataAsJson = json_encode($aUserData);
 
 		// Nothing
 		$sJS =
 			<<<JS
 /* Start of Tawk.to Script */
-var Tawk_API=Tawk_API||{};
-Tawk_API.visitor = {
-	name : {$sUserNameAsJson},
-	email : {$sUserEmailAsJson}
-};
-var Tawk_LoadStart=new Date();
+var Tawk_API = Tawk_API||{};
+Tawk_API.visitor = {$sUserDataAsJson};
+var Tawk_LoadStart = new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/{$sSiteId}/default';
-s1.charset='UTF-8';
+var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+s1.async = true;
+s1.src = 'https://embed.tawk.to/{$sPropertyId}/{$sWidgetId}';
+s1.charset = 'UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();

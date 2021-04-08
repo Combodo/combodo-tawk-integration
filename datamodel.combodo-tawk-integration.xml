@@ -2,7 +2,9 @@
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.6">
 	<module_parameters>
 		<parameters id="combodo-tawk-integration" _delta="define">
-			<site_id>PUT_YOUR_SITE_ID_HERE</site_id>
+			<property_id>PUT_YOUR_PROPERTY_ID_HERE</property_id>
+			<widget_id>PUT_YOUR_WIDGET_ID_HERE</widget_id>
+			<api_key>PUT_YOUR_API_KEY_HERE</api_key>
 			<enabled_portals type="array">
 				<enabled_portal id="itop-portal">itop-portal</enabled_portal>
 			</enabled_portals>
