@@ -43,21 +43,6 @@
 			<webhooks.secret_key>PUT_YOUR_WEBHOOKS_SECRET_KEY_HERE</webhooks.secret_key>
 			<webhooks.create_ticket>
 				<ticket_class>UserRequest</ticket_class>
-				<!-- Use to adapt to the current DM if not creating a UserRequest or if standard UserRequest fields have changed -->
-<!--				<ticket_mapping type="hash">-->
-<!--					<org_id>org_id</org_id>-->
-<!--					<caller_id>caller_id</caller_id>-->
-<!--					<title>title</title>-->
-<!--					<description>description</description>-->
-<!--				</ticket_mapping>-->
-<!--				<behavior_on_unknown_caller>reject|create</behavior_on_unknown_caller>-->
-				<!-- Fields use to create the new person in case behavior_on_unknown_caller is set to "create" -->
-				<!-- Email will always be filled in the "email" attribute -->
-<!--				<caller_default_values type="hash">-->
-<!--					<org_id>3</org_id>-->
-<!--					<name>Unknown</name>-->
-<!--					<first_name>Caller</first_name>-->
-<!--				</caller_default_values>-->
 				<!-- Default values of the ticket, typically if it has mandatory attributes that won't be set from the chat -->
 				<ticket_default_values type="hash"></ticket_default_values>
 			</webhooks.create_ticket>
