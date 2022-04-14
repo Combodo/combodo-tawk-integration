@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.6">
+	<classes>
+		<class id="UserRequest" _delta="must_exist">
+			<fields>
+				<field id="origin" _delta="must_exist">
+					<values>
+						<value id="chat" _delta="define_if_not_exists">
+							<code>chat</code>
+						</value>
+					</values>
+				</field>
+				<field id="tawkto_ref" xsi:type="AttributeString" _delta="define">
+					<sql>tawkto_ref</sql>
+					<default_value/>
+					<is_null_allowed>true</is_null_allowed>
+				</field>
+			</fields>
+			<presentation>
+				<details>
+					<items>
+						<item id="col:col3" _delta="must_exist">
+							<items>
+								<item id="fieldset:Ticket:relation" _delta="must_exist">
+									<items>
+										<item id="tawkto_ref" _delta="define">
+											<rank>100</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+			</presentation>
+		</class>
+	</classes>
 	<module_parameters>
 		<parameters id="combodo-tawk-integration" _delta="define">
 			<property_id>PUT_YOUR_PROPERTY_ID_HERE</property_id>
 			<widget_id>PUT_YOUR_WIDGET_ID_HERE</widget_id>
 			<api_key>PUT_YOUR_API_KEY_HERE</api_key>
+			<webhooks.secret_key>PUT_YOUR_WEBHOOKS_SECRET_KEY_HERE</webhooks.secret_key>
+			<webhooks.create_ticket>
+				<ticket_class>UserRequest</ticket_class>
+				<!-- Use to adapt to the current DM if not creating a UserRequest or if standard UserRequest fields have changed -->
+<!--				<ticket_mapping type="hash">-->
+<!--					<org_id>org_id</org_id>-->
+<!--					<caller_id>caller_id</caller_id>-->
+<!--					<title>title</title>-->
+<!--					<description>description</description>-->
+<!--				</ticket_mapping>-->
+<!--				<behavior_on_unknown_caller>reject|create</behavior_on_unknown_caller>-->
+				<!-- Fields use to create the new person in case behavior_on_unknown_caller is set to "create" -->
+				<!-- Email will always be filled in the "email" attribute -->
+<!--				<caller_default_values type="hash">-->
+<!--					<org_id>3</org_id>-->
+<!--					<name>Unknown</name>-->
+<!--					<first_name>Caller</first_name>-->
+<!--				</caller_default_values>-->
+				<!-- Default values of the ticket, typically if it has mandatory attributes that won't be set from the chat -->
+				<ticket_default_values type="hash"></ticket_default_values>
+			</webhooks.create_ticket>
 			<enabled_portals type="array">
 				<enabled_portal id="itop-portal">itop-portal</enabled_portal>
 			</enabled_portals>

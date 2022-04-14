@@ -21,9 +21,9 @@ class ComposerStaticInit0b992a5c5d3a8633e6d653680842ef4e
     );
 
     public static $classMap = array (
-        'Combodo\\iTop\\Extension\\TawkIntegration\\Extension\\ConsoleUIExtension' => __DIR__ . '/../..' . '/src/Hook/ConsoleUIExtension.php',
-        'Combodo\\iTop\\Extension\\TawkIntegration\\Extension\\PortalUIExtension' => __DIR__ . '/../..' . '/src/Hook/PortalUIExtension.php',
         'Combodo\\iTop\\Extension\\TawkIntegration\\Helper\\ConfigHelper' => __DIR__ . '/../..' . '/src/Helper/ConfigHelper.php',
+        'Combodo\\iTop\\Extension\\TawkIntegration\\Service\\IncomingWebhooksHandler' => __DIR__ . '/../..' . '/src/Service/IncomingWebhooksHandler.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
