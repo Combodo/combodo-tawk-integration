@@ -1,4 +1,4 @@
-# iTop module : tawk.to chat integration
+# iTop module: Chat integration with tawk.to
 
 ## About
 
