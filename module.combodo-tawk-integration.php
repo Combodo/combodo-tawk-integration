@@ -24,7 +24,7 @@ SetupWebPage::AddModule(
 	array(
 		// Identification
 		//
-		'label' => 'Tawk.to messenger integration',
+		'label' => 'Chat integration with tawk.to',
 		'category' => 'integration',
 
 		// Setup
