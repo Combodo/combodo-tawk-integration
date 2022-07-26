@@ -46,7 +46,7 @@ class ConsoleUIExtension extends AbstractPageUIExtension
 		}
 
 		// Add JS widget
-		$oPage->add_init_script(ConfigHelper::GetWidgetJSSnippet());
+		$oPage->add_script(ConfigHelper::GetWidgetJSSnippet());
 
 		return $sJS;
 	}
