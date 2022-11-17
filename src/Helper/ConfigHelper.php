@@ -131,8 +131,10 @@ class ConfigHelper
 		$sJS =
 			<<<JS
 /* Start of Tawk.to Script */
-var Tawk_API = Tawk_API||{};
-Tawk_API.visitor = {$sUserDataAsJson};
+// Note: Unlike the official snippet, we use `window.Tawk_API` instead of `var Tawk_API` to ensure that the variable is global,
+// otherwise we encounter variable scope issues and the visitor data are not passed to the tawk.to server.
+window.Tawk_API = window.Tawk_API||{};
+window.Tawk_API.visitor = {$sUserDataAsJson};
 var Tawk_LoadStart = new Date();
 (function(){
 var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
