@@ -20,34 +20,30 @@
 
 namespace Combodo\iTop\Extension\TawkIntegration\Extension;
 
-use AbstractPageUIExtension;
 use Combodo\iTop\Extension\TawkIntegration\Helper\ConfigHelper;
-use iTopWebPage;
+use iBackofficeScriptExtension;
 
 /**
- * Class ConsoleUIExtension
+ * Class ConsoleTalkScriptExtension
  *
  * @package Combodo\iTop\Extension\TawkIntegration\Extension
  * @author Guillaume Lajarige <guillaume.lajarige@combodo.com>
  */
-class ConsoleUIExtension extends AbstractPageUIExtension
+class ConsoleTalkScriptExtension implements iBackofficeScriptExtension
 {
 	/**
 	 * @inheritDoc
 	 */
-	public function GetNorthPaneHtml(iTopWebPage $oPage)
+	public function GetScript():string
 	{
-		$sJS = '';
 
 		// Check if chat should be loaded
 		if (!ConfigHelper::IsAllowed('backoffice'))
 		{
-			return $sJS;
+			return '';
 		}
 
 		// Add JS widget
-		$oPage->add_script(ConfigHelper::GetWidgetJSSnippet());
-
-		return $sJS;
+		 return ConfigHelper::GetWidgetJSSnippet();
 	}
 }
