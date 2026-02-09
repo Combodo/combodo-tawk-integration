@@ -18,7 +18,7 @@
  * You should have received a copy of the GNU Affero General Public License
  */
 
-namespace Combodo\iTop\Extension\TawkIntegration\Extension;
+namespace Combodo\iTop\Extension\TawkIntegration\Hook;
 
 use Combodo\iTop\Extension\TawkIntegration\Helper\ConfigHelper;
 use iBackofficeScriptExtension;

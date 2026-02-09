@@ -43,7 +43,7 @@ SetupWebPage::AddModule(
 			// Module's autoloader
 			'vendor/autoload.php',
 			// Explicitly load APIs classes
-			'src/Hook/ConsoleUIExtension.php',
+			'src/Hook/ConsoleTalkScriptExtension.php',
 			'src/Hook/PortalUIExtension.php',
 		),
 		'webservice' => array(),
