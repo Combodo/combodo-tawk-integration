@@ -7,8 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Combodo\\iTop\\Extension\\TawkIntegration\\Helper\\ConfigHelper' => $baseDir . '/src/Helper/ConfigHelper.php',
-    'Combodo\\iTop\\Extension\\TawkIntegration\\Hook\\ConsoleTalkScriptExtension' => $baseDir . '/src/Hook/ConsoleTalkScriptExtension.php',
     'Combodo\\iTop\\Extension\\TawkIntegration\\Hook\\PortalUIExtension' => $baseDir . '/src/Hook/PortalUIExtension.php',
+    'Combodo\\iTop\\Extension\\TawkIntegration\\Hook\\TawkBackofficeScriptExtension' => $baseDir . '/src/Hook/TawkBackofficeScriptExtension.php',
     'Combodo\\iTop\\Extension\\TawkIntegration\\Service\\IncomingWebhooksHandler' => $baseDir . '/src/Service/IncomingWebhooksHandler.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

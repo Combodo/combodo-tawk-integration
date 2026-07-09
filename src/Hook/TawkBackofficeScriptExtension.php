@@ -24,26 +24,25 @@ use Combodo\iTop\Extension\TawkIntegration\Helper\ConfigHelper;
 use iBackofficeScriptExtension;
 
 /**
- * Class ConsoleTalkScriptExtension
+ * Class TawkBackofficeScriptExtension
  *
- * @package Combodo\iTop\Extension\TawkIntegration\Extension
+ * @package Combodo\iTop\Extension\TawkIntegration\Hook
  * @author Guillaume Lajarige <guillaume.lajarige@combodo.com>
  */
-class ConsoleTalkScriptExtension implements iBackofficeScriptExtension
+class TawkBackofficeScriptExtension implements iBackofficeScriptExtension
 {
 	/**
 	 * @inheritDoc
 	 */
-	public function GetScript():string
+	public function GetScript(): string
 	{
 
 		// Check if chat should be loaded
-		if (!ConfigHelper::IsAllowed('backoffice'))
-		{
+		if (!ConfigHelper::IsAllowed('backoffice')) {
 			return '';
 		}
 
 		// Add JS widget
-		 return ConfigHelper::GetWidgetJSSnippet();
+		return ConfigHelper::GetWidgetJSSnippet();
 	}
 }

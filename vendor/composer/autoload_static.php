@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit0b992a5c5d3a8633e6d653680842ef4e
 {
     public static $prefixLengthsPsr4 = array (
-        'C' => 
+        'C' =>
         array (
             'Combodo\\iTop\\Extension\\TawkIntegration\\' => 39,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Combodo\\iTop\\Extension\\TawkIntegration\\' => 
+        'Combodo\\iTop\\Extension\\TawkIntegration\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -22,8 +22,8 @@ class ComposerStaticInit0b992a5c5d3a8633e6d653680842ef4e
 
     public static $classMap = array (
         'Combodo\\iTop\\Extension\\TawkIntegration\\Helper\\ConfigHelper' => __DIR__ . '/../..' . '/src/Helper/ConfigHelper.php',
-        'Combodo\\iTop\\Extension\\TawkIntegration\\Hook\\ConsoleTalkScriptExtension' => __DIR__ . '/../..' . '/src/Hook/ConsoleTalkScriptExtension.php',
         'Combodo\\iTop\\Extension\\TawkIntegration\\Hook\\PortalUIExtension' => __DIR__ . '/../..' . '/src/Hook/PortalUIExtension.php',
+        'Combodo\\iTop\\Extension\\TawkIntegration\\Hook\\TawkBackofficeScriptExtension' => __DIR__ . '/../..' . '/src/Hook/TawkBackofficeScriptExtension.php',
         'Combodo\\iTop\\Extension\\TawkIntegration\\Service\\IncomingWebhooksHandler' => __DIR__ . '/../..' . '/src/Service/IncomingWebhooksHandler.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
